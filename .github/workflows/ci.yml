@@ -363,7 +363,8 @@ jobs:
     needs: Assets
     if: github.event_name == 'pull_request' || github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.tests == 'true') || github.event_name == 'schedule'
     timeout-minutes: 360
-    runs-on: ubuntu-latest
+    # MNN wheels require glibc <2.41 to load their native extension.
+    runs-on: ubuntu-24.04
     steps:
       - name: Cleanup disk space
         uses: ultralytics/actions/cleanup-disk@main
