@@ -232,17 +232,18 @@ jobs:
             torch: "1.9.0"
             torchvision: "0.10.0"
             numpy_extra: export-legacy-torch
-          - os: ubuntu-latest
+          # PyTorch 1.10-1.12 wheels require glibc <2.41 to load libtorch_cpu.so.
+          - os: ubuntu-24.04
             python: "3.9"
             torch: "1.10.0"
             torchvision: "0.11.0"
             numpy_extra: export-legacy-torch
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             python: "3.10"
             torch: "1.11.0"
             torchvision: "0.12.0"
             numpy_extra: export-legacy-torch
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             python: "3.10"
             torch: "1.12.0"
             torchvision: "0.13.0"
